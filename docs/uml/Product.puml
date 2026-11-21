@@ -14,4 +14,26 @@ class Product {
   + setPrice(price : double) : void
 }
 
+class ProductService {
+  - products : List<Product>
+  - nextId : Long
+  + getAllProducts() : List<Product>
+  + getProductById(id : Long) : Optional<Product>
+  + addProduct(product : Product) : Product
+  + deleteProduct(id : Long) : void
+  + findByName(name : String) : List<Product>
+}
+
+class ProductController {
+  - productService : ProductService
+  + getAllProducts() : List<Product>
+  + search(name : String) : List<Product>
+  + getProductById(id : Long) : Product
+  + addProduct(product : Product) : Product
+  + deleteProduct(id : Long) : void
+}
+
+ProductController ..> ProductService
+ProductService --> Product
+
 @enduml
