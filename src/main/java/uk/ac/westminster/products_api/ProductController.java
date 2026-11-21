@@ -32,8 +32,9 @@ public class ProductController {
         return productService.getProductById(id).orElse(null);
     }
 
+    // Product is abstract now so Jackson cant build it, using DigitalProduct for now
     @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody DigitalProduct product) {
         return productService.addProduct(product);
     }
 
