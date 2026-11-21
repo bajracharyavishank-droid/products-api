@@ -14,6 +14,10 @@ public class Product {
         setPrice(price);
     }
 
+    public String getSummary() {
+        return getName() + " - £" + getPrice();
+    }
+
     public Long getId() { return id; }
 
     public String getName() { return name; }
