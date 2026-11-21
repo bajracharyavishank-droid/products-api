@@ -13,8 +13,8 @@ public class PhysicalProduct extends Product {
     public PhysicalProduct(Long id, String name, double price,
                            double weightKg, String dimensions) {
         super(id, name, price);
-        this.weightKg = weightKg;
-        this.dimensions = dimensions;
+        setWeightKg(weightKg);
+        setDimensions(dimensions);
     }
 
     public double getWeightKg() {
